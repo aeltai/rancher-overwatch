@@ -1,0 +1,66 @@
+{
+  "name": "rancher-overwatch",
+  "description": "Rancher Overwatch: a Rancher UI extension that shows who can do what across Rancher and Kubernetes RBAC, and what they actually did",
+  "version": "0.1.0",
+  "private": false,
+  "rancher": {
+    "annotations": {
+      "catalog.cattle.io/kube-version": ">= 1.28.0-0",
+      "catalog.cattle.io/rancher-version": ">= 2.15.0-0",
+      "catalog.cattle.io/ui-extensions-version": ">= 3.0.0 < 4.0.0"
+    }
+  },
+  "scripts": {
+    "dev": "NODE_ENV=dev ./node_modules/.bin/vue-cli-service serve",
+    "build": "./node_modules/.bin/vue-cli-service build",
+    "build-pkg": "./node_modules/@rancher/shell/scripts/build-pkg.sh rancher-overwatch",
+    "clean": "./node_modules/@rancher/shell/scripts/clean",
+    "test": "node --no-warnings pkg/rancher-overwatch/rbac/__tests__/engine.test.mjs",
+    "postinstall": "node scripts/patch-shell-vue3-refs.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@rancher/components": "0.2.1-alpha.0",
+    "@rancher/shell": "3.0.4",
+    "@types/lodash": "4.14.184",
+    "@vue/eslint-config-standard": "^9.0.1",
+    "css-loader": "6.7.3",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-cypress": "^6.4.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^18.2.1",
+    "eslint-plugin-promise": "^7.3.0"
+  },
+  "resolutions": {
+    "@aws-sdk/types": "3.714.0",
+    "@aws-sdk/util-locate-window": "3.693.0",
+    "@types/lodash": "4.17.5",
+    "@types/node": "20.10.8",
+    "minimatch": "9.0.1",
+    "nopt": "7.2.0",
+    "vue": "3.2.13"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-typescript": "5.0.8",
+    "@vue/cli-service": "5.0.8",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "core-js": "3.40.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "ts-loader": "9.4.2",
+    "typescript": "5.6.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

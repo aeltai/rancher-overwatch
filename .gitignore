@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-pkg/
+.env
+.shell/
+.cache/
+*.log
+.DS_Store
+pkg/*/.shell
+pkg/*/node_modules
