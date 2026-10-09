@@ -1,0 +1,27 @@
+annotations:
+  catalog.cattle.io/certified: rancher
+  catalog.cattle.io/namespace: cattle-ui-plugin-system
+  catalog.cattle.io/os: linux
+  catalog.cattle.io/permits-os: linux, windows
+  catalog.cattle.io/scope: management
+  catalog.cattle.io/ui-component: plugins
+  catalog.cattle.io/display-name: Rancher Overwatch
+  catalog.cattle.io/kube-version: '>= 1.28.0-0'
+  catalog.cattle.io/rancher-version: '>= 2.15.0-0'
+  catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+apiVersion: v2
+appVersion: 0.1.0
+description: >-
+  Rancher Overwatch: see who can do what across Rancher and Kubernetes RBAC, and
+  what they actually did
+name: rancher-overwatch
+type: application
+keywords:
+  - rbac
+  - audit
+  - security
+  - access
+version: 0.1.0
+icon: >-
+  https://raw.githubusercontent.com/aeltai/rancher-overwatch/main/docs/logo/overwatch-mark.svg
+home: https://github.com/aeltai/rancher-overwatch

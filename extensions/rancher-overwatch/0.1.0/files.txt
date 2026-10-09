@@ -1,0 +1,6 @@
+plugin/package.json
+plugin/rancher-overwatch-0.1.0.umd.min.37.js
+plugin/rancher-overwatch-0.1.0.umd.min.37.js.map
+plugin/rancher-overwatch-0.1.0.umd.min.js
+plugin/rancher-overwatch-0.1.0.umd.min.js.map
+plugin/version-commit.txt

@@ -1,0 +1,2 @@
+(("undefined"!==typeof self?self:this)["webpackChunkrancher_overwatch_0_1_0"]=("undefined"!==typeof self?self:this)["webpackChunkrancher_overwatch_0_1_0"]||[]).push([[37],{37:function(e){const h=[{product:{"rancher-overwatch":"Rancher Overwatch"}}];e.exports=h.length<=1?h[0]:h}}]);
+//# sourceMappingURL=rancher-overwatch-0.1.0.umd.min.37.js.map

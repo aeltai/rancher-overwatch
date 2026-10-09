@@ -1,0 +1,23 @@
+{
+  "name": "rancher-overwatch",
+  "description": "Rancher Overwatch: see who can do what across Rancher and Kubernetes RBAC, and what they actually did",
+  "icon": "https://raw.githubusercontent.com/aeltai/rancher-overwatch/main/docs/logo/overwatch-mark.svg",
+  "homepage": "https://github.com/aeltai/rancher-overwatch",
+  "keywords": [
+    "rbac",
+    "audit",
+    "security",
+    "access"
+  ],
+  "version": "0.1.0",
+  "private": false,
+  "license": "Apache-2.0",
+  "rancher": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "rancher-overwatch-0.1.0.umd.min.js"
+}
