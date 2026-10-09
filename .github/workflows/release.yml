@@ -1,0 +1,22 @@
+name: Release
+
+# Publishing a GitHub release tagged <pkg>-<version> (e.g. rancher-overwatch-0.1.0) builds the
+# extension Helm chart and pushes it to the gh-pages branch, which Rancher reads as an extension repository.
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+jobs:
+  build-extension-charts:
+    # Pinned to a rancher/dashboard master commit; bump deliberately.
+    uses: rancher/dashboard/.github/workflows/build-extension-charts.yml@93a7d8a49d4ef86793b609b98d8a17b162851c10
+    permissions:
+      actions: write
+      contents: write
+      deployments: write
+      pages: write
+      pull-requests: write
+    with:
+      target_branch: gh-pages
+      tagged_release: ${{ github.ref_name }}

@@ -57,6 +57,16 @@ All screenshots use the built-in demo data (see below).
 - Rancher **2.15** or newer (UI Extensions API v3, `@rancher/shell` 3.x)
 - Node.js 20+ and Yarn 1.x to build
 
+## Install
+
+In Rancher 2.15+, add this repository as an extension repository and install from **Extensions**:
+
+- **Extensions → ⋮ → Manage Repositories → Create**
+- Git Repo URL `https://github.com/aeltai/rancher-overwatch.git`, Git Branch `gh-pages`
+- **Extensions → Available → Rancher Overwatch → Install**
+
+Full steps, a `kubectl` alternative, updating and uninstalling: [docs/installation.md](docs/installation.md).
+
 ## Quick start (development)
 
 ```bash
@@ -73,7 +83,7 @@ yarn build-pkg            # → dist-pkg/rancher-overwatch-0.1.0/
 yarn test                 # logic checks for the RBAC engine
 ```
 
-Publishing the build as a Rancher extension (Helm chart, catalog image or Helm repository) is described in the [Rancher extensions documentation](https://extensions.rancher.io/extensions/next/publishing).
+Releases are published to the `gh-pages` branch by the Release workflow when a GitHub release tagged `rancher-overwatch-<version>` is created; see [Releasing a new version](docs/installation.md#releasing-a-new-version-maintainers).
 
 ## Status
 
@@ -86,6 +96,7 @@ Not verified yet: live data on real installations, real non-administrator logins
 
 ## Documentation
 
+- [Installation](docs/installation.md): add the extension repository to Rancher, install, update, release
 - [Access model](docs/access-model.md): who sees what and how it is enforced
 - [Audit log](docs/audit-log.md): data sources, enabling audit logging, event handling
 - [Architecture](docs/architecture.md): data flow, model, code layout

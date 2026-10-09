@@ -14,6 +14,8 @@
     "dev": "NODE_ENV=dev ./node_modules/.bin/vue-cli-service serve",
     "build": "./node_modules/.bin/vue-cli-service build",
     "build-pkg": "./node_modules/@rancher/shell/scripts/build-pkg.sh rancher-overwatch",
+    "publish-pkgs": "./node_modules/@rancher/shell/scripts/extension/publish",
+    "parse-tag-name": "./node_modules/@rancher/shell/scripts/extension/parse-tag-name",
     "clean": "./node_modules/@rancher/shell/scripts/clean",
     "test": "node --no-warnings pkg/rancher-overwatch/rbac/__tests__/engine.test.mjs",
     "postinstall": "node scripts/patch-shell-vue3-refs.js"
