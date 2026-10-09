@@ -3,11 +3,29 @@ export const EXPLORER_PAGE = 'explorer';
 
 const BLANK_CLUSTER = '_';
 
-// Shield with an all-seeing eye (Rancher Overwatch). Black fill so Rancher can tint it to the theme.
-const ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M12 1.8l8.2 3.2v6.2c0 5-3.4 9.1-8.2 11-4.8-1.9-8.2-6-8.2-11V5L12 1.8zM5.8 12c1.6-2.7 3.8-4 6.2-4s4.6 1.3 6.2 4c-1.6 2.7-3.8 4-6.2 4s-4.6-1.3-6.2-4zM9.7 12a2.3 2.3 0 1 0 4.6 0 2.3 2.3 0 1 0-4.6 0z"/></svg>';
+// Full-colour logo (docs/logo/overwatch-mark.svg). The id lets ICON_STYLE find the <img> by its src.
+const ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="rancher-overwatch-logo"><defs><linearGradient id="ow-shield" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#1A2B8C"/></linearGradient></defs><path fill="url(#ow-shield)" stroke="#F2B705" stroke-width="4" stroke-linejoin="round" d="M64 5l12 8 17-3 12 12 5 18v18c0 31-20 54-46 64C38 112 18 89 18 58V40l5-18 12-12 17 3z"/><g fill="#fff"><path d="M48 49C33 49 24 40 28 22c3 10 10 16 22 16z"/><path d="M80 49c15 0 24-9 20-27-3 10-10 16-22 16z"/><path d="M46 52c-8-2-15 0-20 5 5 5 13 6 21 3z"/><path d="M82 52c8-2 15 0 20 5-5 5-13 6-21 3z"/><path d="M44 40c12-5 28-5 40 0 2 12 1 24-3 34-2 8-3 12-6 14H53c-3-2-4-6-6-14-4-10-5-22-3-34z"/><path d="M47 88c0-7 8-10 17-10s17 3 17 10c0 7-7 12-17 12s-17-5-17-12z"/></g><path fill="#0B1F3A" d="M38 26c12-9 40-9 52 0l-5 14H43z"/><path fill="#1A2B8C" d="M43 34h42v7H43z"/><path fill="#F2B705" d="M64 25l2 4.2 4.6.6-3.3 3.2.8 4.6L64 35.4l-4.1 2.2.8-4.6-3.3-3.2 4.6-.6z"/><path fill="#0B1F3A" d="M42 41h44c-4 7-40 7-44 0z"/><path fill="#1A2B8C" d="M46 56l15 5-1 4-14-5z"/><circle cx="54" cy="66" r="3.6" fill="#30BA78"/><path fill="#C9D6FF" d="M50 90c0-5 6-8 14-8s14 3 14 8-6 8-14 8-14-3-14-8z"/><ellipse cx="57.5" cy="89" rx="2.6" ry="3" fill="#1A2B8C"/><ellipse cx="70.5" cy="89" rx="2.6" ry="3" fill="#1A2B8C"/><path stroke="#0B1F3A" stroke-width="7" stroke-linecap="round" d="M83 75l13 15"/><circle cx="75" cy="66" r="11" fill="#E6FBF1" fill-opacity=".9" stroke="#F2B705" stroke-width="3.5"/><circle cx="75" cy="66" r="6.2" fill="#30BA78"/><circle cx="75" cy="66" r="2.6" fill="#0B1F3A"/><circle cx="77.3" cy="63.6" r="1.4" fill="#fff"/></svg>';
+
+// Rancher runs every product icon through a CSS filter that recolours it to the theme's text colour
+// (shell/components/IconOrSvg.vue). Switch that off for this icon so the logo keeps its colours.
+const ICON_STYLE = 'img.svg-icon[src*="rancher-overwatch-logo"] { filter: none !important; }';
+
+function keepIconColours() {
+  if (typeof document === 'undefined' || document.getElementById('rancher-overwatch-icon-style')) {
+    return;
+  }
+
+  const style = document.createElement('style');
+
+  style.id = 'rancher-overwatch-icon-style';
+  style.textContent = ICON_STYLE;
+  document.head.appendChild(style);
+}
 
 export function init($plugin, store) {
   const { product } = $plugin.DSL(store, PRODUCT_NAME);
+
+  keepIconColours();
 
   product({
     icon:                'search',

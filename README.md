@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo/overwatch-logo.svg" alt="Rancher Overwatch" width="420">
+</p>
+
 # Rancher Overwatch
 
 A [Rancher UI extension](https://extensions.rancher.io/) that shows **who can do what** across Rancher and Kubernetes RBAC, **and what they actually did**.
